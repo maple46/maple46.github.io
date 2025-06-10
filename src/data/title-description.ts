@@ -5,6 +5,6 @@ export interface CustomMetadata {
 
 export const customMetadata: CustomMetadata = {
   // If you want a custom title or description you can add it here.
-  // title: "My Custom Title",
+  title: "maple46.github.io",
   // description: "My Custom Description",
 };
