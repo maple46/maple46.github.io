@@ -6,7 +6,19 @@ export function EducationEntry({ education }: { education: Education }) {
       <div className="grid grid-cols-4 gap-x-2 mb-2">
         <span className="text-xs text-zinc-500 mt-1">{education.year}</span>
         <div className="col-span-3">
-          <h3 className="text-base mb-1 font-serif">{education.institution}</h3>
+          <h3 className="text-base mb-1 font-serif">
+            {education.institutionUrl ? (
+              <a
+                href={education.institutionUrl}
+                className="hover:text-zinc-600 transition-colors"
+                rel="noopener noreferrer"
+              >
+                {education.institution}
+              </a>
+            ) : (
+              education.institution
+            )}
+          </h3>
           <p className="text-sm text-zinc-600">{education.degree}</p>
           {education.advisor && (
             <p className="text-sm text-zinc-500 mt-2 italic">

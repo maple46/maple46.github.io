@@ -1,6 +1,7 @@
 export interface Education {
   year: string;
   institution: string;
+  institutionUrl: string;
   degree: string;
   advisor?: string;
   thesis?: string;
@@ -12,6 +13,7 @@ export const educationData: Education[] = [
   {
     year: "2022—Present",
     institution: "Institute of Science Tokyo",
+    institutionUrl: "https://www.isct.ac.jp/en",
     degree: "B.S. in Computer Science",
     // advisor: "Prof. Koichiro Yoshino",
     // thesis: "Algorithmic Approaches to Causal Discovery",
