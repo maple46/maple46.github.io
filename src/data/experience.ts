@@ -10,6 +10,14 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    date: "Summer 2025",
+    title: "Summer Internship",
+    company: "Fixstars",
+    description:
+      "Accelerating Deep Learning Models.",
+    companyUrl: "https://www.fixstars.com/ja",
+  },
+  {
     date: "Summer 2024",
     title: "Summer Internship",
     company: "Jij",
