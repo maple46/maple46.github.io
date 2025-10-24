@@ -23,7 +23,7 @@ export const aboutMe: AboutMe = {
   institution: "Institute of Science Tokyo",
   // Note that links work in the description
   description:
-    "I'm a fourth-year <a href='https://www.isct.ac.jp/en'>undergraduate student</a> working at Narural Language Processing.",
+    "I'm a fourth-year undergraduate student working at Natural Language Processing.",
   email: "",
   imageUrl:
     "",
