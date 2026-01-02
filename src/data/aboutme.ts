@@ -33,7 +33,7 @@ export const aboutMe: AboutMe = {
   twitterUsername: "maple_46_",
   blogUrl: "",
   cvUrl: "",
-  institutionUrl: "https://www.isct.ac.jp/en",
+  institutionUrl: "https://www.isct.ac.jp/ja",
   // altName: "",
   // secretDescription: "I like dogs.",
 };

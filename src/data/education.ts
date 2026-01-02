@@ -13,7 +13,7 @@ export const educationData: Education[] = [
   {
     year: "2022—Present",
     institution: "Institute of Science Tokyo",
-    institutionUrl: "https://www.isct.ac.jp/en",
+    institutionUrl: "https://www.isct.ac.jp/ja",
     degree: "B.S. in Computer Science",
     // advisor: "Prof. Koichiro Yoshino",
     // thesis: "Algorithmic Approaches to Causal Discovery",
