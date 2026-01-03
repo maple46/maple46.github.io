@@ -26,7 +26,7 @@ export const aboutMe: AboutMe = {
     "I study natural language processing, with a particular focus on the safety and interpretability of large language models. My research aims to uncover the internal mechanisms and representations that drive model behavior, ultimately contributing to more transparent and reliable AI systems.<br><br>In parallel, I am interested in quantum error correction and fault-tolerant quantum computing. I also develop software tools to explore and simulate these quantum systems.",
   email: "",
   imageUrl:
-    "",
+    "/images/profile.jpg",
   googleScholarUrl: "",
   githubUsername: "maple46",
   linkedinUsername: "",
