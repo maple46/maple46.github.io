@@ -31,7 +31,7 @@ export const aboutMe: AboutMe = {
   githubUsername: "maple46",
   linkedinUsername: "",
   twitterUsername: "maple_46_",
-  blogUrl: "https://maple-46.hatenablog.com/",
+  blogUrl: "",
   cvUrl: "",
   institutionUrl: "https://www.isct.ac.jp/ja",
   // altName: "",
