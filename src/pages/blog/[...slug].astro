@@ -1,0 +1,33 @@
+---
+// [slug].astro ではなく [...slug].astro を採用した理由
+//
+// Content Collections の post.id はファイルパスに基づくため、src/content/blog/2026/my-post.md のようにサブディレクトリを使った場合、id が "2024/my-post" のように複数セグメントになる。
+// [slug].astro は単一セグメントしかマッチしないため、サブディレクトリ構成に対してルーティングが機能しなくなる。
+// [...slug].astro (Rest パラメータ) にすることで、フラット構成とサブディレクトリ構成のどちらにも対応できる。
+
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPost
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+>
+  <Content />
+</BlogPost>

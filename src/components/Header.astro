@@ -1,0 +1,149 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="header-inner">
+    <nav>
+      <a href="/" class:list={[{ active: currentPath === "/" }]}>Home</a>
+      <a href="/blog" class:list={[{ active: currentPath.startsWith("/blog") }]}
+        >Blog</a
+      >
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <!-- sun -->
+      <svg
+        class="icon sun"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <line x1="12" y1="2" x2="12" y2="5"></line><line
+          x1="12"
+          y1="19"
+          x2="12"
+          y2="22"></line>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line
+          x1="17.66"
+          y1="17.66"
+          x2="19.78"
+          y2="19.78"></line>
+        <line x1="2" y1="12" x2="5" y2="12"></line><line
+          x1="19"
+          y1="12"
+          x2="22"
+          y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line
+          x1="17.66"
+          y1="6.34"
+          x2="19.78"
+          y2="4.22"></line>
+      </svg>
+      <!-- moon -->
+      <svg
+        class="icon moon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("theme-toggle")!;
+  const root = document.documentElement;
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDarkInit = stored === "dark" || (!stored && prefersDark);
+  if (isDarkInit) root.setAttribute("data-theme", "dark");
+  btn.classList.toggle("dark", isDarkInit);
+
+  btn.addEventListener("click", () => {
+    const isDark = root.getAttribute("data-theme") === "dark";
+    root.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+    btn.classList.toggle("dark", !isDark);
+  });
+</script>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+  .header-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+  nav a {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover,
+  nav a.active {
+    color: var(--accent);
+  }
+
+  /* theme toggle */
+  #theme-toggle {
+    position: absolute;
+    right: 1.5rem;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+  }
+  #theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .icon {
+    display: none;
+    width: 22px;
+    height: 22px;
+  }
+  #theme-toggle .moon {
+    display: block;
+  }
+  #theme-toggle.dark .moon {
+    display: none;
+  }
+  #theme-toggle.dark .sun {
+    display: block;
+  }
+</style>

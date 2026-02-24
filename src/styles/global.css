@@ -1,0 +1,57 @@
+:root {
+  --bg: rgb(244, 244, 239);
+  --text: rgb(23, 23, 23);
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-h: #1d4ed8;
+  --border: rgb(203, 203, 203);
+  --card: rgb(244, 242, 237);
+  --font: "Lilex", "Hiragino Kaku Gothic ProN", sans-serif;
+  --max-w: 1000px;
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --text: #e5e5e5;
+  --muted: #9ca3af;
+  --accent: #60a5fa;
+  --accent-h: #93c5fd;
+  --border: rgb(77, 77, 77);
+  --card: #1a1a1a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent-h);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
