@@ -22,7 +22,7 @@ export const profile = {
   name: "Futa Watanabe",
   role: "Undergraduate student",
   org: "@ Institute of Science Tokyo",
-  bio: "コンピュータサイエンスと機械学習を専攻する修士1年生です。自然言語処理・深層学習を中心に研究を行っています。オープンソース開発にも積極的に取り組んでいます。",
+  bio: "自然言語処理の研究をしています。最近はLLMの学習データと能力の関係性に興味があります。たまに量子計算も触ります。",
 
   links: [
     {
@@ -63,7 +63,5 @@ export const profile = {
     },
   ] as TimelineEntry[],
 
-  publications: [
-    
-  ] as Publication[],
+  publications: [] as Publication[],
 };
