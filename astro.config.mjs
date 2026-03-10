@@ -14,15 +14,7 @@ export default defineConfig({
       },
     },
     remarkPlugins: [remarkMath],
-    rehypePlugins: [
-      [
-        rehypeKatex,
-        {
-          strict: false,
-          output: "mathml",
-        },
-      ],
-    ],
+    rehypePlugins: [rehypeKatex],
   },
   integrations: [mdx()],
 });

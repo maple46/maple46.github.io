@@ -22,7 +22,7 @@ export const profile = {
   name: "Futa Watanabe",
   role: "Undergraduate student",
   org: "@ Institute of Science Tokyo",
-  bio: "自然言語処理の研究をしています。最近はLLMの学習データと能力の関係性に興味があります。たまに量子計算も触ります。",
+  bio: "自然言語処理の研究をしています。最近はLLMの学習データと能力の関係性、内部機序、AI Safetyに興味があります。AI以外では量子計算(特にFTQCの開発)に興味があります。",
 
   links: [
     {
