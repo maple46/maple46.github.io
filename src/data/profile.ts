@@ -13,8 +13,10 @@ export interface TimelineEntry {
 
 export interface Publication {
   title: string;
+  authors: {
+    name: string;
+  }[];
   venue: string;
-  year: number;
   url?: string;
 }
 
@@ -22,7 +24,7 @@ export const profile = {
   name: "Futa Watanabe",
   role: "Undergraduate student",
   org: "@ Institute of Science Tokyo",
-  bio: "自然言語処理の研究をしています。最近は言語モデルの内部機序や安全性に興味があります。AI以外ではHPC技術や量子計算(特にFTQCの開発)に興味があります。",
+  bio: "自然言語処理の研究をしています。最近は言語モデルの安全性や内部機序に関心があります。AIの他には、HPC技術や量子計算(特にFTQCの開発)に興味があります。",
 
   links: [
     {
@@ -63,5 +65,17 @@ export const profile = {
     },
   ] as TimelineEntry[],
 
-  publications: [] as Publication[],
+  publications: [
+    {
+      title: "複数参照ベース評価における参照集合の評価に向けて",
+      authors: [
+        { name: "渡邉 楓大" },
+        { name: "佐藤 魁" },
+        { name: "赤間 怜奈" },
+        { name: "吉野 幸一郎" },
+      ],
+      venue: "言語処理学会第32回年次大会 (NLP2026), March 2026",
+      url: "https://www.anlp.jp/proceedings/annual_meeting/2026/pdf_dir/B2-21.pdf",
+    },
+  ] as Publication[],
 };
