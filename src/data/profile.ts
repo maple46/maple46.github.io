@@ -20,11 +20,30 @@ export interface Publication {
   url?: string;
 }
 
+export interface SkillItem {
+  name: string;
+  description: string;
+}
+
 export const profile = {
   name: "Futa Watanabe",
   role: "Undergraduate student",
   org: "@ Institute of Science Tokyo",
   bio: "自然言語処理の研究をしています。最近は言語モデルの安全性や内部機序に関心があります。AIの他には、HPC技術や量子計算(特にFTQCの開発)に興味があります。",
+  skills: [
+    {
+      name: "Python",
+      description: "",
+    },
+    {
+      name: "Rust",
+      description: "",
+    },
+    {
+      name: "競技プログラミング",
+      description: "",
+    },
+  ] as SkillItem[],
 
   links: [
     {
