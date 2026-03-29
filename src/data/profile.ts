@@ -27,7 +27,7 @@ export interface SkillItem {
 
 export const profile = {
   name: "Futa Watanabe",
-  role: "Undergraduate student",
+  role: "First-year Master's student",
   org: "@ Institute of Science Tokyo",
   bio: "自然言語処理の研究をしています。最近は言語モデルの安全性や内部機序に関心があります。AIの他には、HPC技術や量子計算(特にFTQCの開発)に興味があります。",
   skills: [
@@ -62,7 +62,13 @@ export const profile = {
 
   education: [
     {
-      period: "2022.4 - Present",
+      period: "2026.4 - Present",
+      title: "東京科学大学 修士課程",
+      sub: "情報理工学院 情報工学系　知能情報コース",
+      url: "https://www.isct.ac.jp/",
+    },
+    {
+      period: "2022.4 - 2026.3",
       title: "東京科学大学 学士課程",
       sub: "情報理工学院 情報工学系",
       url: "https://www.isct.ac.jp/",
