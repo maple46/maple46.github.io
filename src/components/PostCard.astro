@@ -10,49 +10,72 @@ const { title, description, pubDate, slug } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString("ja-JP", {
     year: "numeric",
-    month: "long",
-    day: "numeric",
+    month: "2-digit",
+    day: "2-digit",
 });
 ---
 
-<a href={`/blog/${slug}`} class="card">
-    <article>
-        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+<a href={`/blog/${slug}`} class="post-item">
+    <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+    <div class="post-body">
         <h3>{title}</h3>
         <p>{description}</p>
-    </article>
+    </div>
 </a>
 
 <style>
-    .card {
-        display: block;
-        padding: 1.25rem 1.5rem;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--bg);
+    .post-item {
+        display: grid;
+        grid-template-columns: 7rem 1fr;
+        gap: 1.5rem;
+        padding: 1.75rem 0;
+        border-bottom: 1px solid var(--border);
         color: var(--text);
-        transition:
-            border-color 0.2s,
-            box-shadow 0.2s;
     }
-    .card:hover {
-        border-color: var(--accent);
-        box-shadow: 0 2px 12px rgba(37, 99, 235, 0.08);
+    .post-item:first-of-type {
+        padding-top: 0;
+    }
+    .post-item:hover {
         color: var(--text);
     }
     time {
-        font-size: 0.8rem;
+        padding-top: 0.15rem;
+        font-size: 0.78rem;
         color: var(--muted);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+    }
+    .post-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-width: 0;
     }
     h3 {
         font-size: 1.1rem;
-        font-weight: 650;
-        margin: 0.35rem 0 0.4rem;
+        font-weight: 600;
         line-height: 1.4;
+        transition: color 0.2s;
+    }
+    .post-item:hover h3 {
+        color: var(--accent);
     }
     p {
         font-size: 0.9rem;
         color: var(--muted);
-        line-height: 1.6;
+        line-height: 1.7;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    @media (max-width: 640px) {
+        .post-item {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        time {
+            padding-top: 0;
+        }
     }
 </style>
