@@ -41,8 +41,18 @@ import { profile } from "../data/profile";
     <!-- 右カラム: 説明・経歴 -->
     <div class="content">
         <div class="section">
-            <h2 class="sec-title">About</h2>
-            <p class="bio">{profile.bio}</p>
+            <h2 class="sec-title">Research Interests</h2>
+            <ul class="sec-list">
+                {
+                    profile.interests.map((interest) => (
+                        <li class="bullet-item">
+                            <div class="entry">
+                                <span class="entry-title">{interest}</span>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
         </div>
 
         <div class="section">
