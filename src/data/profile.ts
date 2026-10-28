@@ -30,8 +30,7 @@ export const profile = {
   role: "First-year Master's student",
   org: "@ Institute of Science Tokyo",
   interests: [
-    "AI Safety",
-    "Safety Alignment",
+    "LLM Safety & Alignment",
   ],
   skills: [
     {
