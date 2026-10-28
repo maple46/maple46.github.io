@@ -80,15 +80,21 @@ export const profile = {
 
   experience: [
     {
+      period: "2026.9",
+      title: "富士通株式会社",
+      sub: "Research Intern",
+      url: "https://global.fujitsu/ja-JP",
+    },
+    {
       period: "2025.9",
       title: "株式会社フィックスターズ",
-      sub: "Internship",
+      sub: "Software Engineering Intern",
       url: "https://www.fixstars.com/",
     },
     {
       period: "2024.8 - 2024.9",
       title: "株式会社JIJ",
-      sub: "Summer Internship",
+      sub: "Research Intern",
       url: "https://j-ij.com/ja",
     },
   ] as TimelineEntry[],
